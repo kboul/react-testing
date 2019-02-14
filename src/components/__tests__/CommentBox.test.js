@@ -17,22 +17,23 @@ it('has a text area and a buttton', () => {
     expect(wrapped.find('button').length).toEqual(1)
 })
 
-it('has a text area and users can type in', () => {
-    wrapped.find('textarea').simulate('change', {
-        // pass as value the desired to be tested
-        target: { value: 'new comment' }
+describe('the textarea', () => {
+    beforeEach(() => {
+        wrapped.find('textarea').simulate('change', {
+            // pass as value the desired to be tested
+            target: { value: 'new comment' }
+        })
+        // force the component to update like using setState
+        wrapped.update()
     })
-    // force the component to update like using setState
-    wrapped.update()
-    expect(wrapped.find('textarea').prop('value')).toEqual('new comment')
-})
 
-it('should empty the textarea when form is submitted & textarea is not empty', () => {
-    wrapped.find('textarea').simulate('change', {
-        target: { value: 'new comment' }
+    it('has a text area and users can type in', () => {
+        expect(wrapped.find('textarea').prop('value')).toEqual('new comment')
     })
-    wrapped.update()
-    wrapped.find('form').simulate('submit')
-    wrapped.update()
-    expect(wrapped.find('textarea').prop('value')).toEqual('')
+
+    it('should empty the textarea when form is submitted & textarea is not empty', () => {
+        wrapped.find('form').simulate('submit')
+        wrapped.update()
+        expect(wrapped.find('textarea').prop('value')).toEqual('')
+    })
 })
