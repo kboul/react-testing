@@ -26,3 +26,13 @@ it('has a text area and users can type in', () => {
     wrapped.update()
     expect(wrapped.find('textarea').prop('value')).toEqual('new comment')
 })
+
+it('should empty the textarea when form is submitted & textarea is not empty', () => {
+    wrapped.find('textarea').simulate('change', {
+        target: { value: 'new comment' }
+    })
+    wrapped.update()
+    wrapped.find('form').simulate('submit')
+    wrapped.update()
+    expect(wrapped.find('textarea').prop('value')).toEqual('')
+})
