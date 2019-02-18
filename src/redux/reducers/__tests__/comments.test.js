@@ -12,3 +12,9 @@ it('handles actions of type SAVE_COMMENT', () => {
 
     expect(newState).toEqual([comment])
 })
+
+it('handles action with unknown type', () => {
+    const newState = commentsReducer([], { type: 'Random type' })
+
+    expect(newState).toEqual([])
+})
