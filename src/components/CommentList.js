@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class CommentList extends Component {
-    state = {}
-
     renderComments = () => {
         return this.props.comments.map((comment, key) => {
             return (
