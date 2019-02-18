@@ -1,11 +1,16 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import CommentBox from 'components/CommentBox'
+import Rout from 'Root'
 
 let wrapped
 
 beforeEach(() => {
-    wrapped = mount(<CommentBox />)
+    wrapped = mount(
+        <Rout>
+            <CommentBox />
+        </Rout>
+    )
 })
 
 afterEach(() => {

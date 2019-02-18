@@ -1,8 +1,7 @@
-import { createStore } from 'redux'
-import rootReducer from 'redux/reducers/index'
+import { createStore, applyMiddleware, compose } from 'redux'
+import reducers from 'redux/reducers'
 
-const store = (window.__REDUX_DEVTOOLS_EXTENSION__
-    ? window.__REDUX_DEVTOOLS_EXTENSION__()(createStore)
-    : createStore)(rootReducer)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducers, composeEnhancers(applyMiddleware()))
 
 export default store
