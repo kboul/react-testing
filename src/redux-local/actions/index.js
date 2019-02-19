@@ -6,11 +6,11 @@ export const saveComment = comment => ({
     comment
 })
 
-export const fetchComments = () => {
-    const response = jsonPlaceholder.get('/comments')
+export const fetchComments = async () => {
+    const comments = await jsonPlaceholder.get('/comments')
 
     return {
         type: FETCH_COMMENT,
-        response
+        comments
     }
 }
