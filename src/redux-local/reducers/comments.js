@@ -1,4 +1,4 @@
-import { SAVE_COMMENT } from 'redux/actions/types'
+import { SAVE_COMMENT } from 'redux-local/actions/types'
 
 export default function (state = [], action) {
     switch (action.type) {

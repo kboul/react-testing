@@ -1,5 +1,5 @@
-import { saveComment } from 'redux/actions'
-import { SAVE_COMMENT } from 'redux/actions/types'
+import { saveComment } from 'redux-local/actions'
+import { SAVE_COMMENT } from 'redux-local/actions/types'
 
 describe('saveComment', () => {
     it('has the correct type', () => {
