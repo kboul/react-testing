@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { array } from 'prop-types'
 import { connect } from 'react-redux'
 
 class CommentList extends Component {
@@ -23,6 +24,10 @@ class CommentList extends Component {
             </div>
         )
     }
+}
+
+CommentList.propTypes = {
+    comments: array.isRequired
 }
 
 const mapStateToProps = state => ({
