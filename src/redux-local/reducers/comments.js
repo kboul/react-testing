@@ -1,7 +1,6 @@
 import { SAVE_COMMENT, FETCH_COMMENT } from 'redux-local/actions/types'
 
 export default function (state = [], action) {
-    console.log(action, state)
     switch (action.type) {
         case SAVE_COMMENT:
             return [action.comment, ...state]

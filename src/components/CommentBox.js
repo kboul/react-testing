@@ -37,15 +37,21 @@ class CommentBox extends Component {
                         type="submit"
                         className="btn btn-primary">
                         Submit comment
-                </button>
+                    </button>
                 </form>
+                <button
+                    className="btn btn-primary mt-2"
+                    onClick={this.props.fetchComments}>
+                    Fetch Comments
+                </button>
             </div>
         )
     }
 }
 
 CommentBox.propTypes = {
-    saveComment: func.isRequired
+    saveComment: func.isRequired,
+    fetchComments: func.isRequired
 }
 
 export default connect(null, actions)(CommentBox)
