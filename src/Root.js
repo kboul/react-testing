@@ -1,11 +1,22 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import store from 'redux/store'
 
-const Root = props => {
+import { createStore, applyMiddleware, compose } from 'redux'
+import reducers from 'redux/reducers'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    || compose
+
+const Root = ({ children, initialState }) => {
+    const storeExpression = createStore(
+        reducers,
+        initialState,
+        composeEnhancers(applyMiddleware())
+    )
+
     return (
-        <Provider store={store}>
-            {props.children}
+        <Provider store={storeExpression} >
+            {children}
         </Provider>
     )
 }
