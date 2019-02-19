@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { func } from 'prop-types'
 import { connect } from 'react-redux'
 import * as actions from 'redux-local/actions'
 
@@ -41,6 +42,10 @@ class CommentBox extends Component {
             </div>
         )
     }
+}
+
+CommentBox.propTypes = {
+    saveComment: func.isRequired
 }
 
 export default connect(null, actions)(CommentBox)
