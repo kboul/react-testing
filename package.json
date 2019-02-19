@@ -4,6 +4,7 @@
     "private": true,
     "dependencies": {
         "@types/jest": "^24.0.4",
+        "axios": "^0.18.0",
         "bootstrap": "^4.3.0",
         "enzyme": "^3.8.0",
         "enzyme-adapter-react-16": "^1.9.1",
