@@ -1,5 +1,5 @@
 import { SAVE_COMMENT, FETCH_COMMENTS } from 'redux-local/actions/types'
-import jsonPlaceholder from 'api/jsonPlaceholder'
+import http from 'services/httpService'
 
 export const saveComment = comment => ({
     type: SAVE_COMMENT,
@@ -7,7 +7,7 @@ export const saveComment = comment => ({
 })
 
 export const fetchComments = async () => {
-    const comments = await jsonPlaceholder.get('/comments')
+    const comments = await http.get('/comments')
 
     return {
         type: FETCH_COMMENTS,
