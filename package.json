@@ -28,6 +28,14 @@
         "eject": "react-scripts eject",
         "test:coverage": "npm test -- --coverage"
     },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx}",
+            "!/node_modules/",
+            "!src/index.js",
+            "!src/serviceWorker.js"
+        ]
+    },
     "eslintConfig": {
         "extends": "react-app"
     },
