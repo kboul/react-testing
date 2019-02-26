@@ -40,7 +40,7 @@ class CommentBox extends Component {
                     </button>
                 </form>
                 <button
-                    className="btn btn-primary mt-2"
+                    className="btn btn-primary mt-2 fetch-comments"
                     onClick={this.props.fetchComments}>
                     Fetch Comments
                 </button>
