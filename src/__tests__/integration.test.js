@@ -3,17 +3,18 @@ import { mount } from 'enzyme'
 import moxios from 'moxios'
 import Root from 'Root'
 import App from 'components/App'
+import http from 'services/httpService'
 
 beforeEach(() => {
-    moxios.install()
-    moxios.stubRequest(`${process.env.REACT_APP_API_URL}/comments`, {
+    moxios.install(http)
+    moxios.stubRequest('/comments', {
         status: 200,
         response: [{ name: 'Fetched #1' }, { name: 'Fetched #2' }]
     })
 })
 
 afterEach(() => {
-    moxios.uninstall()
+    moxios.uninstall(http)
 })
 
 it('can fetch a list of comments and display them', done => {
