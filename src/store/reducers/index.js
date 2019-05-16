@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import commentsReducer from 'redux-local/reducers/comments'
+import commentsReducer from 'store/reducers/comments'
 
 export default combineReducers({
     comments: commentsReducer

@@ -1,4 +1,4 @@
-import { SAVE_COMMENT, FETCH_COMMENTS } from 'redux-local/actions/types'
+import { SAVE_COMMENT, FETCH_COMMENTS } from 'store/actions/types'
 import http from 'services/httpService'
 
 export const saveComment = comment => ({

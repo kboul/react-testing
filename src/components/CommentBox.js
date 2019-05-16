@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { func } from 'prop-types'
 import { connect } from 'react-redux'
-import * as actions from 'redux-local/actions'
+import * as actions from 'store/actions'
 
 class CommentBox extends Component {
     state = {
